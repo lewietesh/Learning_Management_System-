@@ -27,7 +27,7 @@
 
 <body>
   <!-- Start Nagigation -->
-  <nav class="navbar navbar-expand-sm navbar-dark pl-5 fixed-top">
+  <nav class="navbar navbar-expand-sm pl-5 fixed-top" style="background-color: #FDF0D5 !important">
     <a href="index.php" class="navbar-brand">E & M Institute</a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myMenu">
       <span class="navbar-toggler-icon"></span>

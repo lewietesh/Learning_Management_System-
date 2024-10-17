@@ -104,8 +104,8 @@
     ?>  
 
      <!-- Start Students Testimonial -->
-      <div class="container-fluid mt-5" style="background-color: #4B7289" id="Feedback">
-        <h1 class="text-center testyheading p-4"> Student's Feedback </h1>
+      <div class="container-fluid mt-5" style="background-color: #ffffff" id="Feedback">
+        <h1 class="text-center testyheading text-dark p-4"> Student Reviews</h1>
         <div class="row">
           <div class="col-md-12">
             <div id="testimonial-slider" class="owl-carousel">
@@ -135,7 +135,7 @@
         </div>
     </div>  <!-- End Students Testimonial -->
 
-    <div class="container-fluid bg-danger"> <!-- Start Social Follow -->
+    <div class="container-fluid" style="color: #FB8500"> <!-- Start Social Follow -->
         <div class="row text-white text-center p-1">
           <div class="col-sm">
             <a class="text-white social-hover" href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
@@ -153,8 +153,8 @@
     </div> <!-- End Social Follow -->
 
     <!-- Start About Section -->
-    <div class="container-fluid p-4" style="background-color:#E9ECEF">
-      <div class="container" style="background-color:#E9ECEF">
+    <div class="container-fluid p-4" style="background-color:#003566">
+      <div class="container" style="background-color:#003566 !important">
         <div class="row text-center">
           <div class="col-sm">
             <h5>About Us</h5>

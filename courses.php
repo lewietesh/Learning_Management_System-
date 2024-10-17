@@ -27,7 +27,7 @@
                       <p class="card-text">'.$row['course_desc'].'</p>
                     </div>
                     <div class="card-footer">
-                      <p class="card-text d-inline">Price: <small><del>&#8377 '.$row['course_original_price'].'</del></small> <span class="font-weight-bolder">&#8377 '.$row['course_price'].'<span></p> <a class="btn btn-primary text-white font-weight-bolder float-right" href="coursedetails.php?course_id='.$course_id.'">Enroll</a>
+                      <p class="card-text d-inline">Price: <small><del>Ksh '.$row['course_original_price'].'</del></small> <span class="font-weight-bolder">Ksh '.$row['course_price'].'<span></p> <a class="btn btn-primary text-white font-weight-bolder float-right" href="coursedetails.php?course_id='.$course_id.'">Enroll</a>
                     </div>
                   </div> </a>
                 </div>
