@@ -1,6 +1,6 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // Ajax Call for Already Exists Email Verification
-  $("#stuemail").on("keypress blur", function() {
+  $("#stuemail").on("keypress blur", function () {
     var reg = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
     var stuemail = $("#stuemail").val();
     $.ajax({
@@ -10,7 +10,7 @@ $(document).ready(function() {
         checkemail: "checkmail",
         stuemail: stuemail
       },
-      success: function(data) {
+      success: function (data) {
         console.log(data);
         if (data != 0) {
           $("#statusMsg2").html(
@@ -37,14 +37,14 @@ $(document).ready(function() {
     });
   });
   // Checking name on keypress
-  $("#stuname").keypress(function() {
+  $("#stuname").keypress(function () {
     var stuname = $("#stuname").val();
     if (stuname !== "") {
       $("#statusMsg1").html(" ");
     }
   });
   // Checking Password on keypress
-  $("#stupass").keypress(function() {
+  $("#stupass").keypress(function () {
     var stupass = $("#stupass").val();
     if (stupass !== "") {
       $("#statusMsg3").html(" ");
@@ -52,60 +52,52 @@ $(document).ready(function() {
   });
 });
 
-// Ajax Call for Adding New Student
-function addStu() {
+function addUser() {
   var reg = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
   var stuname = $("#stuname").val();
   var stuemail = $("#stuemail").val();
   var stupass = $("#stupass").val();
-  // checking fields on form submission
+  var sturole = $("#sturole").val();
+
+  // Checking fields on form submission
   if (stuname.trim() == "") {
-    $("#statusMsg1").html(
-      '<small style="color:red;"> Please Enter Name ! </small>'
-    );
+    $("#statusMsg1").html('<small style="color:red;"> Please Enter Name ! </small>');
     $("#stuname").focus();
     return false;
+  } else if (sturole.trim() == "") {
+    $("#statusMsgRole").html('<small style="color:red;"> Please Select a Role ! </small>');
+    $("#sturole").focus();
+    return false;
   } else if (stuemail.trim() == "") {
-    $("#statusMsg2").html(
-      '<small style="color:red;"> Please Enter Email ! </small>'
-    );
+    $("#statusMsg2").html('<small style="color:red;"> Please Enter Email ! </small>');
     $("#stuemail").focus();
     return false;
   } else if (stuemail.trim() != "" && !reg.test(stuemail)) {
-    $("#statusMsg2").html(
-      '<small style="color:red;"> Please Enter Valid Email e.g. example@mail.com </small>'
-    );
+    $("#statusMsg2").html('<small style="color:red;"> Please Enter Valid Email e.g. example@mail.com </small>');
     $("#stuemail").focus();
     return false;
   } else if (stupass.trim() == "") {
-    $("#statusMsg3").html(
-      '<small style="color:red;"> Please Enter Password ! </small>'
-    );
+    $("#statusMsg3").html('<small style="color:red;"> Please Enter Password ! </small>');
     $("#stupass").focus();
     return false;
   } else {
     $.ajax({
-      url: "Student/addstudent.php",
+      url: sturole === "student" ? "Student/addstudent.php" : "Instructor/addinstructor.php",
       type: "post",
       data: {
-        // assigned stusignup value just to check all iz well
         stusignup: "stusignup",
         stuname: stuname,
         stuemail: stuemail,
-        stupass: stupass
+        stupass: stupass,
+        role: sturole
       },
-      success: function(data) {
+      success: function (data) {
         console.log(data);
         if (data == "OK") {
-          $("#successMsg").html(
-            '<span class="alert alert-success"> Registration Successful ! </span>'
-          );
-          // making field empty after signup
+          $("#successMsg").html('<span class="alert alert-success"> Registration Successful ! </span>');
           clearStuRegField();
         } else if (data == "Failed") {
-          $("#successMsg").html(
-            '<span class="alert alert-danger"> Unable to Register ! </span>'
-          );
+          $("#successMsg").html('<span class="alert alert-danger"> Unable to Register ! </span>');
         }
       }
     });
@@ -137,7 +129,7 @@ function checkStuLogin() {
       stuLogEmail: stuLogEmail,
       stuLogPass: stuLogPass
     },
-    success: function(data) {
+    success: function (data) {
       console.log(data);
       if (data == 0) {
         $("#statusLogMsg").html(
