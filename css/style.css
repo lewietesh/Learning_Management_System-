@@ -81,6 +81,24 @@ a.social-hover:hover {
   border-color: none !important;
 }
 
+/* CSS for page footer */
+#page-footer{
+
+  background-color: #003566;
+  color: #fff;
+  border-top: 1px solid #fff;
+  
+}
+
+#page-about h5{
+  color: #FB8500 !important;
+  font-weight: 900;
+}
+
+#page-about a{
+  color: #ffff !important;
+}
+
 @media screen and (min-width: 0px) and (max-width: 700px) {
   .my-content,
   .txt-banner,

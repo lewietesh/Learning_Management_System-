@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 17, 2024 at 10:33 AM
+-- Generation Time: Oct 17, 2024 at 10:59 AM
 -- Server version: 5.7.40
 -- PHP Version: 8.2.0
 
@@ -136,6 +136,27 @@ INSERT INTO `feedback` (`f_id`, `f_content`, `stu_id`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `instructors`
+--
+
+DROP TABLE IF EXISTS `instructors`;
+CREATE TABLE IF NOT EXISTS `instructors` (
+  `instructor_id` int(11) NOT NULL AUTO_INCREMENT,
+  `instructor_name` varchar(255) COLLATE utf8_bin NOT NULL,
+  `email` varchar(255) COLLATE utf8_bin NOT NULL,
+  `password_hash` varchar(255) COLLATE utf8_bin NOT NULL,
+  `contact` varchar(15) COLLATE utf8_bin NOT NULL,
+  `course_id` int(11) NOT NULL,
+  `courses` text COLLATE utf8_bin,
+  `date_created` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`instructor_id`),
+  UNIQUE KEY `email` (`email`),
+  KEY `course_id` (`course_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `lesson`
 --
 
@@ -200,6 +221,16 @@ INSERT INTO `student` (`stu_id`, `stu_name`, `stu_email`, `stu_pass`, `stu_occ`,
 (176, ' Lewis ', 'lewis@emtech.com', '123456', 'Software ENgg', '../image/stu/student3.jpg'),
 (178, ' Maria', 'maria@ischool.com', '1234567', ' Web Dev', '../image/stu/student6.jpg'),
 (182, ' sonam', 'sonam@gmail.com', '123456', ' Web Dev', '../image/stu/student7.jpg');
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `instructors`
+--
+ALTER TABLE `instructors`
+  ADD CONSTRAINT `instructors_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

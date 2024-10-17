@@ -153,22 +153,22 @@
     </div> <!-- End Social Follow -->
 
     <!-- Start About Section -->
-    <div class="container-fluid p-4" style="background-color:#003566">
+    <div class="container-fluid p-4" id="page-about" style="background-color:#003566">
       <div class="container" style="background-color:#003566 !important">
         <div class="row text-center">
-          <div class="col-sm">
+          <div class="col-sm text-white">
             <h5>About Us</h5>
               <p>E & M Institute provides universal access to the world’s best education, partnering with top universities and organizations to offer courses online.</p>
           </div>
-          <div class="col-sm">
+          <div class="col-sm text-white">
             <h5>Category</h5>
-            <a class="text-dark" href="#">Web Development</a><br />
-            <a class="text-dark" href="#">Web Designing</a><br />
-            <a class="text-dark" href="#">Android App Dev</a><br />
-            <a class="text-dark" href="#">iOS Development</a><br />
-            <a class="text-dark" href="#">Data Analysis</a><br />
+            <a class="text-white" href="#">Full Stack Development</a><br />
+            <a class="text-white" href="#">Web Designing</a><br />
+            <a class="text-white" href="#">Android App Dev</a><br />
+            <a class="text-white" href="#">iOS Development</a><br />
+            <a class="text-white" href="#">Data Analysis</a><br />
           </div>
-          <div class="col-sm">
+          <div class="col-sm text-white">
             <h5>Contact Us</h5>
             <p>E & M Institute <br> Dwerk Industrial Park <br> Tatu City <br> +254 712 345 678 </p>
           </div>

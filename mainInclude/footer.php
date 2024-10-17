@@ -1,5 +1,5 @@
  <!-- Start Footer -->
- <footer class="container-fluid bg-dark text-center p-2">
+ <footer class="container-fluid  text-center p-2" id="page-footer" >
     <small class="text-white">Copyright &copy; 2024 || Designed By LEWIS || <?php   
           if (isset($_SESSION['is_admin_login'])){
             echo '<a href="admin/adminDashboard.php"> Admin Dashboard</a> <a href="logout.php">Logout</a>';
